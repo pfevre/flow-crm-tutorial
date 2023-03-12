@@ -14,6 +14,8 @@ public class Company extends AbstractEntity {
     @NotBlank
     private String name;
 
+    private String country;
+
     @OneToMany(mappedBy = "company")
     @Nullable
     private List<Contact> employees = new LinkedList<>();
@@ -39,5 +41,13 @@ public class Company extends AbstractEntity {
 
     public int getEmployeeCount(){
         return employeeCount;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
     }
 }
